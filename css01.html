@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 스타일 지정하기 </title>
+    <style>
+       
+       .rule { color: rgba(255, 0, 0, 10);}
+        /* rgba(red, green, blue, alpha) */
+
+        /* .rule{ color: hsla(0, 17, 38, 10) } */
+        /* hsl(hue(24색), saturation(채도), lightness(명도), alpha(투명도)) */
+
+    </style>
+</head>
+<body>
+    <h2>스타일 기본 문법</h2>
+    <p class = "rule">문법: 선택자 { 속성1:값1; 속성:값2; }</p>
+    <p class = "commont">선택자(Selector) : 서식을 지정하고 싶은 요소</p>
+    <p class = "commont">속성(Properties) : 부여하고 싶은 스타일의 단어의 특성을 지정</p>
+    <p class = "commont">값(Value) : 해당 속성으로 지정 가능한 키워드</p>
+    
+    <hr>
+    <!-- ================================================================== -->
+
+    <h2>[ 스타일 지정 방식 ]</h2>
+    <h3>인라인 스타일 방식</h3> 
+    
+    <p class = "commont">
+        해당 요소에 style 속성(attibute)로 직접 지정하므로 스타일 지정 즉시 해당 스타일이 그 요소에만 지정된다.<br>
+        재 사용성이 떨어지고, 변경하기가 힘듦.<br>
+        그러므로, 가급적이면 사용하지 않도록 함
+    </p>
+    <code>
+        &lt;span style="color: red;&gt; 첫 단어 &lt;/span&gt;
+        <span style="color: red;">첫 단어</span><br>
+        <span>두 번째 단어</span><br>
+        <span style="color:blue">세번째 단어</span>
+    </code>
+
+    <hr><!-- ================================================================== -->
+
+    <h3>내부 스타일 방식</h3>
+    <p class="commont">
+        해당 문서의 head태그 안 쪽에 style태그로 지정하여 현재 문서에만 적용할 경우 활용<br>
+        재사용성은 현재 문서에만 적용되므로 중간 정도, 변경하기가 쉬움
+    </p>
+
+    <code>
+        &lt;style&gt; .commont { color:red } &lt;style&gt;
+    </code>
+
+    <hr><!-- ================================================================== -->
+
+    <h3> 외부 스타일 방식</h3>
+    <p class="comment"> 
+        별도의 CSS 파일을 작성하여 해당 hrml문서에 연결하여 사용하는 방식으로 재사용성이 뛰어나고<br>
+        필요한 곳에 link 태그를 활용하여 연결하고, 필요가 없는 경우 해당 link태그를 삭제하면 되고,<br>
+        반드시 charset을 UTF-8로 처리하여야 한글이나 특수문자가 손상되지 않는다.
+    </p>
+
+    <code>
+        &lt;link href="style.css" rel="stylesheet"/&gt; <br>
+        ---------------------style1.css------------------------- <br>
+        @charset "UTF-8"
+        <br>
+        선택자{속성:값;}
+    </code>
+
+    <hr><!-- ================================================================== -->
+    <h3>크기 단위</h3>
+    <p class="comment"> 
+        * 스타일에서 콘텐츠나 요소의 크기를 지정할 때 사용 <br>
+    
+        em(rem) <br>
+        % : 글자에는 안씀, 부모의 상대적인 크기 <br>
+        pt : 일반적인 글자 크기 <br>
+        px : 가장 많이 쓰임(글자크기, 박스크기), 모니터의 해상도에 따라 달리 보일 수 있음 <br>
+        vh: 모니터의 높이만큼 알아서 잡힘(반응형) <br>
+        vw: 모니터의 폭에 맞춰서 알아서 잡힘(반응형) <br>
+    
+    </p>
+
+    <br>
+
+    <h3>색상 단위</h3>
+    <p class="comment">
+        * 웹 컬러를 나타내는 방식<br>
+        컬러명, 16진코드 6자리, 16진 코드 3자리. <br>
+        hsl(색각도(0~360),채도,명도), hsla(색각도(0~360),채도,명도,불투명도), <br>
+        rgb(red, green, blue), rgba(red, green, blue, alpha)<br>
+
+    </p>
+
+    <br>
+
+    <h3>각도 단위</h3>
+    <p class="comment">
+        * 해당 요소를 회전하려고 할 경우 활용 <br>
+        deg(각도), turn(바퀴) <br>
+    </p>
+
+    <br>
+    <h3>시간 단위</h3>
+    <p class="comment">
+        * 애니메이션이나 지연시간 등에 지정함 <br>
+        s(초), ms(밀리초)<br>
+    </p>
+
+</body>
+</html>
