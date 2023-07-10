@@ -4,85 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>css 속성(properties)</title>
-
     <style>
+    /* body, html { overflow:hidden; }    */
+    #area { border:3px solid red; padding: 30px; 
+    width: 1000px; margin: 30px auto; }
+    .box { width:200px; height:100px; margin:25px; 
+    border:2px solid #f60; }
+    .inline .box { display:inline; } 
+    .block .box { display:block; } 
+    .inlineblock .box { display:inline-block; } 
+    .none .box { /* display:none;  */ 
+    /* visibility: hidden; */ 
+    /* opacity:0; */
+    background-color: rgba(255, 127, 0, 0.35); }
+    .block .box:first-of-type { border-radius:50px; }
+    .block .box:nth-of-type(2) { border-radius:2em / 5em; }
+    .block .box:nth-of-type(3) { border-radius:30% / 15%; }
+    .block .box:last-of-type { border-radius:50px 100px; }
+    .inlineblock .box { border-radius:20px 30px 40px 50px; }
 
-        /* body,html{ overflow: hidden;} */
-        #area{ border: 3px solid red; width:1000px; margin: 30px; auto}
-        .box{width: 200px; height: 100px; margin: 25px; border: 2px solid blue;}
-        
-        
-        .inline .box{ display: inline;}
-        .block .box{ display:block;}
-        .inlineblock .box{display:inlineblock;}
-        .none .box {/*display: none; visibility: hidden;  opacity: 50;*/ background-color: rgba(255, 127, 0, 0.35);}
-        .block .box:first-of-type{ border-radius: 50px;}
-        .block .box:nth-of-type(2){ border-radius: 2em / 5em;}
-        .block .box:nth-of-type(3){ border-radius: 30% / 15%;}
-        .block .box:last-of-type{ border-radius: 50px / 100px;}
+    .data { display:block; width: 240px; height: 240px; }
+    .over .box:first-of-type { overflow:auto; }
+    .over .box:nth-of-type(2) { overflow:hidden; }
+    .over .box:nth-of-type(3) { overflow:scroll; height:300px; }
+    .over .box:nth-of-type(3) .data { width:100px; height:100px; 
+    overflow:hidden; }
+    .over .box:nth-of-type(4) { overflow:visible; }
+    .over .box:last-of-type { overflow:auto; height:300px; }
+    .over .box:last-of-type .data { width:100px; height:100px; 
+    overflow:hidden; }
 
-        .inline .box{ border-radius:  20px 30px 40px 50px;}
-
-
-
+    .box.size { padding:90px; border-width:5px; margin:20px; }
+    .box.size:first-of-type { box-sizing:content-box; }
+    .box.size:nth-of-type(2) { box-sizing:border-box; }
     </style>
-
-    
-
 </head>
 <body>
-
-    <div id = "area">
-            <section class="con inline">
-                <h2 class="tit">인라인 배치</h2>
-             
-                <div class="box">인박스1</div>
-                <div class="box">인박스2</div>
-                <div class="box">인박스3</div>
-                <div class="box">인박스4</div>
-               
-            </section>
-
+    <div id="area">
+        <section class="con inline">
+            <h2 class="tit">인라인 배치</h2>
             <br><hr><br>
-
-            <section class="con block">
-                <h2 class="tit">블록 배치</h2>
-                
-                <span class="box">박스1</span>
-                <span class="box">박스2</span>
-                <span class="box">박스3</span>
-                <span class="box">박스4</span>
-            </section>
-
+            <div class="box">인박스1</div>
+            <div class="box">인박스2</div>
+            <div class="box">인박스3</div>
+            <div class="box">인박스4</div>
+        </section>
+        <br><hr><br>
+        <section class="con block">
+            <h2 class="tit">블록 배치</h2>
             <br><hr><br>
-
-            <section class="con inlineblock">
-                <h2 class="tit">인라인 블록 배치</h2>             
-                <span class="box">인블박스1</span>
-                <span class="box">인블박스2</span>
-                <span class="box">인블박스3</span>
-                <span class="box">인블박스4</span>
-            </section>
-
+            <span class="box">박스1</span>
+            <span class="box">박스2</span>
+            <span class="box">박스3</span>
+            <span class="box">박스4</span>
+        </section>
+        <br><hr><br>
+        <section class="con inlineblock">
+            <h2 class="tit">인라인블록 배치</h2>
             <br><hr><br>
-
-            <section class="con none">
-                <h2 class="tit">출력안함</h2>
-                <span class="box">논박스1</span>
-                <span class="box">논박스2</span>
-                <span class="box">논박스3</span>
-                <span class="box">논박스4</span>
-            </section>
-
-
+            <span class="box">인블박스1</span>
+            <span class="box">인블박스2</span>
+            <span class="box">인블박스3</span>
+            <span class="box">인블박스4</span>
+        </section>
+        <br><hr><br>
+        <section class="con none">
+            <h2 class="tit">출력 안함</h2>
             <br><hr><br>
-
-          
-
-
-    
+            <div class="box">논박스1</div>
+            <div class="box">논박스2</div>
+            <div class="box">논박스3</div>
+            <div class="box">논박스4</div>
+        </section>
+        <br><hr><br>
+        <section class="con over">
+            <h2 class="tit">오버플로우</h2>
+            <br><hr><br>
+            <div class="box">오버박스1
+                <span class="data">auto 김기태는천재 김기태는미남
+                     김기태는대왕 김기태는사람</span>
+            </div>
+            <div class="box">오버박스2
+                <span class="data">hidden 김기태는천재 김기태는미남
+                     김기태는대왕 김기태는사람</span>
+            </div>
+            <div class="box">오버박스3
+                <span class="data">scroll 김기태는천재 김기태는미남</span>
+            </div>
+            <div class="box">오버박스4
+                <span class="data">visible 김기태는천재 김기태는미남
+                     김기태는대왕 김기태는사람</span>
+            </div>
+            <div class="box">오버박스5
+                <span class="data">auto 김기태는천재</span>
+            </div>
+        </section>
+        <br><hr><br>
+        <div class="box_size">
+            <div class="box size" id="box1">박스크기1</div>
+            <div class="box size">박스크기2</div>
+            <div class="box size">박스크기3</div>
+            <div class="box size">박스크기4</div>
+        </div>
+        <div class="btn_group"><button type="button" id="btn">버튼</button></div>
     </div>
-
+    <script>
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click", function() {
+            colorTrans();
+        });    
+        function colorTrans(){
+            var box = document.getElementById("box1");
+            box.style.backgroundColor = "gold";
+        }    
+    </script>
 
 
 
