@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 속성(properties)</title>
+
+    <style>
+
+        /* body,html{ overflow: hidden;} */
+        #area{ border: 3px solid red; width:1000px; margin: 30px; auto}
+        .box{width: 200px; height: 100px; margin: 25px; border: 2px solid blue;}
+        
+        
+        .inline .box{ display: inline;}
+        .block .box{ display:block;}
+        .inlineblock .box{display:inlineblock;}
+        .none .box {/*display: none; visibility: hidden;  opacity: 50;*/ background-color: rgba(255, 127, 0, 0.35);}
+        .block .box:first-of-type{ border-radius: 50px;}
+        .block .box:nth-of-type(2){ border-radius: 2em / 5em;}
+        .block .box:nth-of-type(3){ border-radius: 30% / 15%;}
+        .block .box:last-of-type{ border-radius: 50px / 100px;}
+
+        .inline .box{ border-radius:  20px 30px 40px 50px;}
+
+
+
+    </style>
+
+    
+
+</head>
+<body>
+
+    <div id = "area">
+            <section class="con inline">
+                <h2 class="tit">인라인 배치</h2>
+             
+                <div class="box">인박스1</div>
+                <div class="box">인박스2</div>
+                <div class="box">인박스3</div>
+                <div class="box">인박스4</div>
+               
+            </section>
+
+            <br><hr><br>
+
+            <section class="con block">
+                <h2 class="tit">블록 배치</h2>
+                
+                <span class="box">박스1</span>
+                <span class="box">박스2</span>
+                <span class="box">박스3</span>
+                <span class="box">박스4</span>
+            </section>
+
+            <br><hr><br>
+
+            <section class="con inlineblock">
+                <h2 class="tit">인라인 블록 배치</h2>             
+                <span class="box">인블박스1</span>
+                <span class="box">인블박스2</span>
+                <span class="box">인블박스3</span>
+                <span class="box">인블박스4</span>
+            </section>
+
+            <br><hr><br>
+
+            <section class="con none">
+                <h2 class="tit">출력안함</h2>
+                <span class="box">논박스1</span>
+                <span class="box">논박스2</span>
+                <span class="box">논박스3</span>
+                <span class="box">논박스4</span>
+            </section>
+
+
+            <br><hr><br>
+
+          
+
+
+    
+    </div>
+
+
+
+
+    <h1>css 출력 및 박스 관련 속성</h1>
+    <p> * 통합 속성을 건 후에 세부 속성을 걸어야 한다.</p>
+    <p> * 속성 종류: display, cisibility, opacity, width, height, overflow, margin, padding, border 등</p>
+    <p> * 모든 속성의 값에 initial(초기값), inherit(부모요소로 부터 상속)</p>
+
+    <hr>
+
+    <h2>display (출력속성)</h2>
+    <p>* 화면 출력 모드를 지정하는 속성</p>
+    <p>* 태그마다 화면 출력 모드가 block, inline, inline-block 등으로 구성됨</p>
+    <p>
+        inline 속성 요소: span, a, strong, em, ins 등<br>
+        lnline 요소의 특징 : 한 줄 안에 자동 줄바꿈이 될 때까지 배치되며, 크기 지정을 할 수 없어 <br>
+        width, height, line-height, text-indent, text-align, padding-top, padding-botton, margin-top, magin-bottom 등의<br>
+        속성을 지정한다고 하더라도 결과에 반영되지 못한다.
+    </p>
+    
+    <p>
+        block 속성 요소:div, h1~h6, p, section, article, header, footer
+        자동으로 다음 줄에 배치가 되며, 크기와 관련된 속성을 지정할 수 있음
+    
+    </p>
+
+    <p>
+        부여 가능한 속성의 값: inline | block | inline-block | none
+    </p>
+
+    <p>
+        부여 가능한 속성의 값2: contents, flex, grid, box, table, inline-flex, inline-grid, inline-table, list-item, run-in, <br>
+                                table-cation, table-column, table-row, table-cell, table-header-group, table-footer-group, <br>
+                                table-column-group, table-row-group 등 
+    </p>
+
+    <hr>
+
+    <h2>visibility (가시속성)</h2>
+    <P>* 보일지 보이지 않을지를 나타내는 속성</P>
+    <p>* visible(보이지 않고 영역도 차지하지 않음) | hidden(보이지 않지만 영역차지) | collapse</p>
+
+    <hr>
+
+    <h2>opacity(불투명도 속성)</h2>
+    <p>* 불투명 정도를 나타내는 속성</p>
+    <p>* 0~1 까지의 실수 또는 정수로 표시 함  </p>
+    <p>* 0-> 투명 | 1 -> 불투명</p>
+    <p>* 해당 요소의 글자와 배경색/ 배경이미지를 포함한 모든 콘텐츠를 불투명 또는 투명하게 지정할 수 있음</p>
+
+    <hr>
+
+    <h2>width (너비 속성)</h2>
+    <p>* 가로(폭 = 너비)의 크기를 지정하는 속성</p>
+    <p>* auto | length | % </p>
+    <p> length : px, pt, pc, cm, mm in, vw(폭), vmin(현재 기기의 가장 좁은 폭), vmax(현재 기기의 가장 넓은 폭) 등의 단위로 지정이 가능</p> 
+    <P>* 기본 화면 출력 속성이 블록 요소 또는 인라인 블록요소 등에만 크기 지정이 가능함</P>
+
+    <hr>
+
+    <h2> height (높이 속성)</h2>
+    <p>* 세로(높이)의 크기를 지정하는 속성</p>
+    <p>* auto | length | % </p>
+    <p> - length : px, pt, pc, cm, mm in, vw(폭), vmin(현재 기기의 가장 좁은 폭), vmax(현재 기기의 가장 넓은 폭) 등의 단위로 지정이 가능</p> 
+    <P>* 기본 화면 출력 속성이 블록 요소 또는 인라인 블록요소 등에만 크기 지정이 가능함</P>
+
+
+
+    <hr>
+    <h2>overflow(흘러넘침 속성)</h2>
+    <p>* 콘텐츠의 양이 지정한 크기(폭/높이)보다 더 클 경우 지정</p>
+    <P>- auto(콘텐츠양이 크거나 많을 때만 스크롤 바를 표시)</P>
+    <p>- visible(흘러넘쳐도 표시해라)</p>
+    <P>- hidden(흘러넘치면 표시xxx)</P>
+    <P>- scroll(흘러넘치든 말든 스크롤바를 만들어라) </P>
+    <p>- clip</p>
+
+    <h3>세부속성</h3>
+    <p>overflow-x(가로), overflow-y(세로)</p>
+
+    <hr>
+
+    <h2>margin(바깥 여백)</h2>
+    <p>* 현재 테두리(콘텐츠) 영역의 바깥 여백으로서 여러 콘텐츠와 콘텐츠 사이의 여백</p>
+    <p>* auto | length | % </p>
+    <p> - length : px, pt, pc, cm, mm in, vw(폭), vmin(현재 기기의 가장 좁은 폭), vmax(현재 기기의 가장 넓은 폭) 등의 단위로 지정이 가능</p> 
+    <p>margin: 값, margin:위/아래 좌/우, magin: 상 우 하 좌</p>
+    <h3>세부속성 </h3>
+    <p>margin-top, margin-botton, margin-left, margin-right</p>
+    <p>* 주의사항: 통합 속성을 먼저 지정하고, 세부 속성을 나중에 지정하여야 세부 속성이 적용됨</p>
+
+    <hr>
+
+    <h2>padding(안쪽여백)</h2>
+    <p>* 테투리와 콘텐츠 사이의 여백</p>
+    <p>* auto | length | % </p>
+    <p> - length : px, pt, pc, cm, mm in, vw(폭), vmin(현재 기기의 가장 좁은 폭), vmax(현재 기기의 가장 넓은 폭) 등의 단위로 지정이 가능</p> 
+    <p>padding:값, padding:위/아래 좌/우, padding: 상 우 하 좌</p>
+    <h3>세부 속성</h3>
+    <p>padding-top, padding-botton, padding-left, padding-right</p>
+    <p>* 주의사항: 통합 속성을 먼저 지정하고, 세부 속성을 나중에 지정하여야 세부 속성이 적용되며, <br>
+        지정한 폭/높이 padding과 border값을 더한 값이 실제 배치(적용)의 크기가 된다.</p>
+
+    <H2>border(테두리)</H2>
+    <p>* bordr: width style color</p>
+    <p> ex) border: 1px solid #000; -> 1px 두께의 검은색 실선</p>
+    <p>- width(선의 두께):  px, pt, pc, cm, mm in, vw(폭), vmin(현재 기기의 가장 좁은 폭), vmax(현재 기기의 가장 넓은 폭) 등의 단위로 지정이 가능</p> 
+    <p>- style(선의 모양): solid, none, hidden, dotted, dashed(사각점선), double, groove(음각), ridge(양각), inset, outset  </p>
+    <p>- color(선의 색): 컬러명, 16진(hex)코드, rgb()/rgba(),hsl(,hsla()등으로 지정이 가능</p>
+    <h3>카테고리별 세부속성</h3> 
+    <h4>border-width(선의 두께) - 상 우 하 좌</h4>
+    <p>ex1) border-width:2px </p>
+    <p>ex2) border-width:2px 5px</p>
+    <p>ex3) border-width:2px 5px 10px 20px</p>
+    <h4>border-style(선의 종류) - 상 우 하 좌</h4>
+    <p>ex1) border-style: solid </p>
+    <p>ex2) border-style:solid dashed</p>
+    <p>ex3) border-style:solid dashed double hidden</p>
+    <h4>border-color(선의 색깔) - 상 우 하 좌</h4>
+    <p>ex1) border-color:red </p>
+    <p>ex2) border-color:red blud</p>
+    <p>ex3) border-color:red blud gold orange</p>
+`   <h3>방향 별 세부 속성
+    <h4>border-left(왼쪽 테두리)</h4>
+    <p>ex1) border-left: 2px double silver</p>
+    <h4>border-right(오른쪽 테두리)</h4>
+    <p>ex2) border-right: 5px dotted gold</p>
+    <h4>border-top(위쪽 테두리)</h4>
+    <p>ex3) border-top: 4px dashed deepskyblue</p>
+    <h4>border-bottom(아래쪽 테두리)</h4>
+    <p>ex4) border-bottom: 7px ridge deeppink</p>
+    
+    <h3>세세속성</h3>
+    <p>border-left-width, border-left-style, border-left-color</p>
+    <p>border-right-width, border-right-style, border-right-color</p>
+    <p>border-top-width, border-top-style, border-top-color</p>
+    <p>border-bottom-width, border-bottom-style, border-bottom-color</p>
+    <p>각 방향별로 선두께, 선종류, 선색상을 개별적으로 지정할 수 있음</p>
+
+    <h2>box-sizing(박스의 크기 산정 방법)</h2>
+    <p>* 박스의 크기를 지정한 너비/ 높이가 콘텐츠까지만 할지, padding과 border를 포함하여 적용할 지 등의 여부를 지정 </p>
+    <p>* content-box | border-box</p>
+    <p>- content-box : 지정한 너비/높이가 콘텐츠에만 적용</p>
+    <p>- border-box : 지정한 너비/높이가 콘텐츠의 + padding + border로 적용됨</p>
+
+    <h2>border-radius(테두리 둥글기)</h2>
+    <p> * px, pt, pc, cm, mm in, vw(폭), vmin(현재 기기의 가장 좁은 폭), vmax(현재 기기의 가장 넓은 폭) 등의 단위로 지정이 가능</p> 
+    <P>ex1) border-radius: 20px; </P>
+    <P>ex2) border-radius: 50%; </P>
+    <P>ex3) border-radius: 20px 50%;</P>
+    <P>ex4) border-radius: 20px 50% 30px 40px; (상 우 하 좌)</P>
+    <P>ex5) border-top-left-radius: 20px;</P>
+    <P>ex6) border-top-right-radius: 20px;</P>
+    <P>ex7) border-bottom-left-radius: 20px;</P>
+    <P>ex8) border-bottom-right-radius: 20px;</P>
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br>
+    
+</body>
+</html>
